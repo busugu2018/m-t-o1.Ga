@@ -17,14 +17,120 @@ struct ContentView: View {
                            endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
             VStack{
-                Text("Libreville, Estuaire, Gabon")
+                Text("Libreville, Estuaire")
                     .font(.system(size: 32, weight: .medium, design: .default))
                     .foregroundColor(.white)
                     .padding() //padding(100)
-                VStack{
-                    Imaage(Image(systemName: "cloud.sun.fill"))
+                VStack(spacing: 8){
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 180, height: 180)
+                    Text("76°")
+                        .font(.system(size: 70, weight: .medium, design: .default))
+                        .foregroundColor(.white)
+                    HStack(spacing: 17){
+                        VStack{
+                            Text("TUE")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                            Image(systemName: "cloud.sun.fill")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                            Text("75°")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                        }
+                        VStack{
+                            Text("WED")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                            Image(systemName: "sun.max")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(.yellow)
+                            Text("70°")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                        }
+                        VStack{
+                            Text("THU")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                            Image(systemName: "wind")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                            Text("66°")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                        }
+                        VStack{
+                            Text("FRI")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                            Image(systemName: "cloud.sun.fill")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                            Text("60°")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                        }
+                        VStack{
+                            Text("SAT")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                            Image(systemName: "moon.stars.fill")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                            Text("55°")
+                                .font(.system(size: 25,
+                                              weight: .medium,
+                                              design: .default))
+                                .foregroundColor(.white)
+                        }
+                    }
+                    Spacer()
+                    
+                    Button {
+                        print("tapped")
+                    } label: {
+                        Text("Change Day Time")
+                            .frame(width: 280, height: 50)
+                            .background(Color.white)
+                            .font(.system(size: 20, weight: .bold, design: .default))
+                            .cornerRadius(10)
+                    }
+                    Spacer()
                 }
-                Spacer()
             }
         }
     }
