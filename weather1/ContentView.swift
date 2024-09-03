@@ -31,24 +31,25 @@ struct ContentView: View {
                         .font(.system(size: 70, weight: .medium, design: .default))
                         .foregroundColor(.white)
                     HStack(spacing: 17){
-                        VStack{
-                            Text("TUE")
-                                .font(.system(size: 25,
-                                              weight: .medium,
-                                              design: .default))
-                                .foregroundColor(.white)
-                            Image(systemName: "cloud.sun.fill")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                            Text("75°")
-                                .font(.system(size: 25,
-                                              weight: .medium,
-                                              design: .default))
-                                .foregroundColor(.white)
-                        }
-                        VStack{
+                        WeatherDayView(dayOfWeek: "TUE",
+                                       imageName: "cloud.sun.fill",
+                                       temperature: 75)
+                        WeatherDayView(dayOfWeek: "TUE",
+                                       imageName: "wind",
+                                       temperature: 66)
+                        WeatherDayView(dayOfWeek: "TUE",
+                                       imageName: "cloud.sun.fill",
+                                       temperature: 75)
+                        WeatherDayView(dayOfWeek: "TUE",
+                                       imageName: "cloud.sun.fill",
+                                       temperature: 75)
+                        WeatherDayView(dayOfWeek: "TUE",
+                                       imageName: "cloud.sun.fill",
+                                       temperature: 75)
+                        WeatherDayView(dayOfWeek: "TUE",
+                                       imageName: "cloud.sun.fill",
+                                       temperature: 75)
+/*                        VStack{
                             Text("WED")
                                 .font(.system(size: 25,
                                               weight: .medium,
@@ -116,7 +117,8 @@ struct ContentView: View {
                                               weight: .medium,
                                               design: .default))
                                 .foregroundColor(.white)
-                        }
+                        }*/
+                        
                     }
                     Spacer()
                     
@@ -139,5 +141,32 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct WeatherDayView: View {
+    
+    var dayOfWeek: String
+    var imageName: String
+    var temperature: Int
+    
+    var body: some View {
+        VStack{
+            Text(dayOfWeek)
+                .font(.system(size: 25,
+                              weight: .medium,
+                              design: .default))
+                .foregroundColor(.white)
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 50)
+            Text("\(temperature)°")
+                .font(.system(size: 25,
+                              weight: .medium,
+                              design: .default))
+                .foregroundColor(.white)
+        }
     }
 }
